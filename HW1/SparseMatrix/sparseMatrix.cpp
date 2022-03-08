@@ -89,6 +89,18 @@ istream& operator>>(istream& is, SparseMatrix& sm)
         cout << error << endl;
         return is;
     }
+
+
+    for(int i = 0; i < sm.getTerm(); i++) {
+        if(sm.smArray[i].getCol() == c && sm.smArray[i].getRow() == r) {
+            sm.smArray[i].setValue(v);
+            sortSparseMatrix(sm.smArray, sm.terms);
+            return is;
+        }
+    }
+
+
+
         
 
     // resize if the sparse matrix is full
