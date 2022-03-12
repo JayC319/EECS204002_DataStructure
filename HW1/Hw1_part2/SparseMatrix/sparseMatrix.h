@@ -71,9 +71,12 @@ public:
     // Multiply function
     SparseMatrix Multiply(SparseMatrix b);
 
+    void addTerm(const int , const int , const int );
+   
+
     // Resizing Method
     void resize(const int);
-     int getTerm() { return terms;}
+    int getTerm() { return terms;}
     void printSparseArray();
 };
 
