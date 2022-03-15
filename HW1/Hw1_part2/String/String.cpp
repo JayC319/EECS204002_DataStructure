@@ -44,7 +44,7 @@ bool String::operator!(){
 // Concatenation with another string t *
 //**************************************
 String String::Concat(String t) {
-    String temp("", 0);
+    String temp((char*)"", 0);
     temp.str = str + t.str;
     temp.len = len + t.len;
     delete temp.f;
@@ -57,7 +57,7 @@ String String::Concat(String t) {
 //*********************************
 String String::Substr(int start, int end) {
     try {
-        if(start >= len || end >= len ) 
+        if(start >= len || end > len ) 
             throw "invalid operation";
     }
 
@@ -65,7 +65,7 @@ String String::Substr(int start, int end) {
         cout << error << endl;
     }
 
-    String temp("", 0);
+    String temp((char*)"", 0);
     
     int count = start;
     while (count < end) {
@@ -129,8 +129,8 @@ String String::Delete(int start, int length) {
         cout << error << endl;
     }
 
-    String temp1("", 0);
-    String temp2("", 0);
+    String temp1((char*)"", 0);
+    String temp2((char*)"", 0);
     temp2.str = str.substr(0,start);
     temp1.str += temp2.str;
     temp2.str = str.substr(start + length, len - 1);
@@ -149,7 +149,7 @@ String String::Delete(int start, int length) {
 String String::CharDelete(char c) {
     int i = 0,
         count = 0;
-    String temp("", 0);
+    String temp((char*)"", 0);
 
     while(i < len) {
         char character = str[i];

@@ -4,5 +4,9 @@
 			"path": "HW1\\Hw1_part2\\String"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"ostream": "cpp"
+		}
+	}
 }
