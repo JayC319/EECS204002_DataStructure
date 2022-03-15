@@ -1,8 +1,35 @@
 #include "sparseMatrix.h"
 #include <iostream>
+#include <stdexcept>
+#include <limits>
+
+//************************************************************************
+// function to check if matrix addition is valid, else throw exceptions  *
+//************************************************************************
+void exceptionCheck1 (const int r1, const int r2, const int c1, const int c2) {
+    cout << "checking" << endl;
+    if((r1!=r2) || (c1 != c2)){
+        cout << "throwing" << endl;
+        throw "Error columns or rows not match.";
+    }
+            
+}
+
+//******************************************************************************
+// function to check if matrix multiplication is valid, else throw exceptions  *
+//******************************************************************************
+void exceptionCheck2 (const int c, const int r) {
+    cout << "checking" << endl;
+    if(c != r) {
+        cout << "throwing" << endl;
+        throw "First matrix's column number and second matrix's row number is not matched!";
+    }
+        
+}
+
 
 //*******************************************************************
-// functions to print the matrix in order of row -> column -> value *
+// function to print the matrix in order of row -> column -> value *
 //*******************************************************************
 void SparseMatrix::printSparseArray() {
     for (int i = 0; i < terms; i++ ){
@@ -14,7 +41,7 @@ void SparseMatrix::printSparseArray() {
 }
 
 //*************************************************
-// functions to swap the matrix term individually *
+// function to swap the matrix term individually *
 //*************************************************
 void swapMatrixTerm(MatrixTerm& a, MatrixTerm& b){
     int tempRow = a.getRow(),
@@ -204,16 +231,21 @@ SparseMatrix SparseMatrix::Transpose()
 // functions to add two matrix and a new SparseMatrix return object *
 //*******************************************************************
 SparseMatrix SparseMatrix::Add(SparseMatrix b)
-{
+{   
     try {
-        if(rows != b.rows || cols != b.cols)
-            throw "Error columns or rows not match!";
+        // if(rows != b.rows || cols != b.cols)
+        //     throw "Error columns or rows not match!";
+        cout << "trying" << endl;
+        exceptionCheck1(rows, b.rows, cols, b.cols);
     }
 
-    catch (const char* error) {
-        cout << error << endl;
+    catch ( char const* e) {
+        cout << "catched" << endl;
+        cout << e << endl;
+        SparseMatrix empty(1,1,0);
+        return empty;
     }
-
+    
     SparseMatrix temp(rows, cols, terms+b.terms);
 
     int pos1 = 0,
@@ -290,12 +322,16 @@ SparseMatrix SparseMatrix::Add(SparseMatrix b)
 
 SparseMatrix SparseMatrix::Multiply(SparseMatrix b) {
     try {
-        if(cols != b.rows)
-            throw "First matrix's column number and second matrix's row number is not matched!";
+        // if(cols != b.rows)
+        //     throw invalid_argument("First matrix's column number and second matrix's row number is not matched!");
+        exceptionCheck2(cols, b.rows);
     }
 
-    catch (const char *error) {
-        cout << error << endl;
+    catch (const char* e) {
+        cout << "catching" << endl;
+        cout << e << endl;
+        SparseMatrix empty(1,1,0);
+        return empty;
     }
 
 

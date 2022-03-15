@@ -13,9 +13,10 @@ public:
         str = init;
         len = m;
         f = new int[m];
+        FailureFunction();
     }
 
-    ~String(){}
+    virtual ~String(){}
 
     //1
     bool operator==(String t);

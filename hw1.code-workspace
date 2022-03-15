@@ -1,12 +1,14 @@
 {
 	"folders": [
 		{
-			"path": "HW1\\Hw1_part2\\String"
+			"path": "HW1\\Hw1_part2\\SparseMatrix"
 		}
 	],
 	"settings": {
 		"files.associations": {
-			"ostream": "cpp"
+			"ostream": "cpp",
+			"iostream": "cpp",
+			"stdexcept": "cpp"
 		}
 	}
 }

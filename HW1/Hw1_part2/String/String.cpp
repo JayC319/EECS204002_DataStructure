@@ -8,7 +8,7 @@ void String::FailureFunction() {
 
     f[0] = -1;
     for (int j = 1; j < lengthP; j++) {
-        int i = f[i-1];
+        int i = f[j-1];
         while (str[j] != str[i+1] && (i >= 0))
             i = f[i];
         if (str[j] == str[i+1])
