@@ -6,10 +6,10 @@ using namespace std;
 int main() 
 {
     
-    String s((char*)"Fakereaka", 8),
-           p((char*)"Fakez", 5),
-           t((char*)"Fakereaka", 8),
-           longQuote((char*)"Look_at_the_cleanse_Look_at_the_move,what_was_that_Fakereaka_WOW!", 65),
+    String s((char*)"Jordan", 6),
+           p((char*)"Lebron", 6),
+           t((char*)"Kobe", 4),
+           longQuote((char*)"Jordan > Lebron, it ain't close.", 32),
            empty((char*)"", 0);
         
     
@@ -100,8 +100,8 @@ int main()
     cout << "-----------------------------------------------------" << endl;
     cout << "String s : " << s.showString() << endl;
     cout << "String p : " << p.showString() << endl;
-    String SS((char*)"Fakera", 6);
-    String SSS((char*)"Fakere", 6);
+    String SS((char*)"Jordon", 6);
+    String SSS((char*)"Jordaniel", 9);
     cout << "String SS : " << SS.showString() << endl;
     cout << "String SSS :" << SSS.showString() << endl;
     cout << "compare string s to string p" << endl;

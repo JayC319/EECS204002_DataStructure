@@ -63,6 +63,8 @@ String String::Substr(int start, int end) {
 
     catch (const char* error) {
         cout << error << endl;
+        String temp((char*)"", 0);
+        return temp;
     }
 
     String temp((char*)"", 0);
@@ -127,6 +129,8 @@ String String::Delete(int start, int length) {
 
     catch (const char* error) {
         cout << error << endl;
+        String temp((char*)"", 0);
+        return temp;
     }
 
     String temp1((char*)"", 0);
