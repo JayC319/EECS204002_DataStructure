@@ -39,10 +39,10 @@ int main()
     cout << m2 << endl;
     cout << "------------------------------------------" << endl;
 
-    cout << "Exception should be created for invalid addition m1 + m2" << endl;
-    cout << "------------------------------------------" << endl;
-    SparseMatrix mNew = m1.Add(m2);
-    cout << "------------------------------------------" << endl;
+    // cout << "Exception should be created for invalid addition m1 + m2" << endl;
+    // cout << "------------------------------------------" << endl;
+    // SparseMatrix mNew = m1.Add(m2);
+    // cout << "------------------------------------------" << endl;
 
     cout << "\nNow we are creating a new matrix by summing your matrix twice" << endl;
     cout << "------------------------------------------" << endl;
@@ -52,10 +52,10 @@ int main()
     cout << "------------------------------------------" << endl;
 
     
-    cout << "Exception should be created for invalid multiplication m1 * m3" << endl;
-    cout << "------------------------------------------" << endl;
-    SparseMatrix mmNew = m1.Multiply(m3);
-    cout << "------------------------------------------" << endl;
+    // cout << "Exception should be created for invalid multiplication m1 * m3" << endl;
+    // cout << "------------------------------------------" << endl;
+    // SparseMatrix mmNew = m1.Multiply(m3);
+    // cout << "------------------------------------------" << endl;
     
 
     cout << "\nNow we are creating a new matrix by multiplying the traspose m2 to your original matrix" << endl;
