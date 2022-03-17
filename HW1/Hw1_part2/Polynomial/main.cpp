@@ -6,15 +6,16 @@ int main() {
     Polynomial p1;
     Polynomial p2;
 
-    cout << "input 3 terms for polynomial 1 in the form of (coefficient, exponent)" << endl;
-    cin >> p1;
-    cout << "p1: " << p1 << endl;
-    cin >> p1;
-    cout << "p1: " << p1 << endl;
-    cin >> p1;
-    cout << "p1: " << p1 << endl;
-    //cin >> p1;
-    //cout << "p1: " << p1 << endl;
+    cout << "input n terms for polynomial 1 in the form of (coefficient, exponent)" << endl;
+    cout << "Please input the terms number: " ;
+    int n;
+    cin >> n;
+
+    while(n--) {
+        cin >> p1;
+        cout << "p1: " << p1 << endl;
+    }
+    
 
     cout << endl;
     cout << "input 4 terms for polynomial 2 in the form of (coefficient, exponent)" << endl;
