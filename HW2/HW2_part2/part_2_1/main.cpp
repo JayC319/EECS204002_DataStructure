@@ -7,8 +7,6 @@ int main()
 {
     
     Queue<int> q1(5);
-
-
     q1.Push(1);
     q1.Push(5);
     q1.Push(7);
@@ -41,5 +39,8 @@ int main()
     q2.ShowProperty();
     q1.Push(19);
     q1.Push(19);
+    q1.ShowProperty();
+    q1.Pop();
+    q1.Pop();
     q1.ShowProperty();    
 }
