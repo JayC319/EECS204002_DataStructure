@@ -1,5 +1,7 @@
 #include "String.h"
 
+
+/*FailureFunction()*/
 //********************************************
 // find failure array for each String object *
 //********************************************
@@ -18,9 +20,10 @@ void String::FailureFunction() {
     }
 }
 
-//**************************
-// equality test           *
-//**************************
+
+//****************************************************
+// equality test by overloading operator==           *
+//****************************************************
 bool String::operator==(String t){
     if(len != t.len)
         return false;
@@ -29,9 +32,10 @@ bool String::operator==(String t){
     return true;
 }
 
-//***********************************
-// empty test, return true or false *
-//***********************************
+
+//************************************************************
+// empty test, return true or false by overloading operator! *
+//************************************************************
 bool String::operator!(){
     if(len != 0) 
         return false;
@@ -40,6 +44,8 @@ bool String::operator!(){
     return true;
 }
 
+
+/* Concat*/
 //**************************************
 // Concatenation with another string t *
 //**************************************
@@ -52,6 +58,8 @@ String String::Concat(String t) {
     return temp;
 }
 
+
+/* Substr */
 //*****************************************
 //   generate substring i ~ j-1           *
 // updated :  generate a substring i~i+j-1*
@@ -96,7 +104,7 @@ String String::Substr(int subPos, int subLen) {
 }
 
 
-
+/* Find */
 //*************************************
 //     find the pattern in the string *
 // if exists return starting position *
@@ -133,6 +141,7 @@ int String::Find(String pat) {
 
 
 
+/* Delete */
 //*********************************************************
 //    delete String[start] to String[start + length - 1]  *
 //    if invalid operation happens, return empty string   *
@@ -162,7 +171,7 @@ String String::Delete(int start, int length) {
 }
 
 
-
+/* CharDelete */
 //*********************************************
 //  delete all given character in the string  *
 //*********************************************
@@ -187,11 +196,25 @@ String String::CharDelete(char c) {
 }
 
 
-//******************************************
-//    compare 2 string with specific rule  *
-//******************************************
+
+/* Compare */
+//******************************************************************************************************
+//    compare 2 string with specific rule:                                                             *
+//                                                                                                     *
+// If two strings of letter of alphabet, x = (x0,…,xm-1) and y=(y0,…,yn-1) where xi, yj are letters,   *
+// then the Compare member function will decide whether x<y, x=y, or x>y,                              *
+// where x < y means if xi=yi for 0≤i<j and xj<yj or if xi=yi for 0≤i≤m and m<n.                       *
+// x=y means m=n and xi=yi for 0≤i<n.                                                                  *
+// x>y means if xi=yi for 0≤i<j and xj>yj or if xi=yi for 0≤i≤n and m>n.                               *
+// The Compare function will return either -1, 0, or +1 if x<y, x=y, or x>y, respectively.             *
+//******************************************************************************************************
 int String::Compare(String y) {
     
+    if(Length() > y.Length())
+        return 1;
+    if(Length() < y.Length())
+        return -1;
+
     bool different = false;
     int smallerSize = min(len, y.len);
     int i = 0;

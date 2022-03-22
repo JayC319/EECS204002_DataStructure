@@ -4,6 +4,11 @@
 using namespace std;
 
 
+/*swapPolynomial*/
+/**************************************************
+ * This functions swap two polynomial term        * 
+ * This serves as a self-build swapping function  *
+ * ************************************************/
 void swapPolynomialTerm(Term& a, Term& b) {
     int tempCoef = a.getCoef(),
         tempExp = a.getExp();
@@ -16,6 +21,10 @@ void swapPolynomialTerm(Term& a, Term& b) {
 }
 
 
+/* SortDescending */
+/********************************************************************
+ * This function sorts the polynomial in an descending exponent way *
+ * ******************************************************************/
 void sortDescendingExponent(Term* t, int terms) {
     int max;
     for(int i = 0; i < terms - 1; i++) {
@@ -28,9 +37,11 @@ void sortDescendingExponent(Term* t, int terms) {
     }
 }
 
-//*****************************
-//
-//*****************************
+
+/* NewTerm() */
+//*******************************************************
+//  this class method adds a new term to the polynomial *
+//*******************************************************
 void Polynomial::NewTerm(const float c, const int e) {
     if(terms == capacity)
     {
@@ -49,9 +60,11 @@ void Polynomial::NewTerm(const float c, const int e) {
     terms++;
 }
 
-//*****************************
-//
-//*****************************
+
+/*Add*/
+//********************************************************
+// This function adds a polynomial to another polynomial *
+//********************************************************
 Polynomial Polynomial::Add(Polynomial b){
     Polynomial c;
     int aPos = 0, bPos = 0;
@@ -83,10 +96,11 @@ Polynomial Polynomial::Add(Polynomial b){
     return c;
 }
 
-//*****************************
-//
-//*****************************
 
+/*Mult*/
+//***************************************************************
+// This function multiplies a polynomial to another polynomial  *
+//***************************************************************
 Polynomial Polynomial::Mult(Polynomial b) {
     int array[termArray[0].getExp() + b.termArray[0].getExp()] = {0};
 
@@ -104,7 +118,8 @@ Polynomial Polynomial::Mult(Polynomial b) {
 
 
 //*****************************
-//
+// operator<< overloading     *
+// to output the polynomial   *
 //*****************************
 ostream &operator<<(ostream &os, Polynomial &p) {
     
@@ -150,7 +165,10 @@ ostream &operator<<(ostream &os, Polynomial &p) {
 }
 
 
-
+//**********************************
+// operator>> overloading          *
+// to input the polynomial terms   *
+//**********************************
 istream &operator>>(istream &is, Polynomial &p) {
     float c;
     int e;
@@ -168,9 +186,11 @@ istream &operator>>(istream &is, Polynomial &p) {
     return is;
 }  
 
-//*****************************
-//
-//*****************************
+/*Eval*/
+//***********************************************
+// input a term x to the Eval function and then *
+// the function will return the value of p(x)   *
+//***********************************************
 float Polynomial::Eval(float f) {
     float evaluation;
     for(int i = 0; i < terms; i++) {
@@ -180,9 +200,12 @@ float Polynomial::Eval(float f) {
     return evaluation;
 }
 
-//*****************************
-//
-//*****************************
+
+/*Coef*/
+//************************************************
+//  returns the coefficient of the given exponet *
+//  if the exponent doesn't exists, return -1
+//************************************************
 float Polynomial::Coef(int e) {
     if(termArray[0].getExp() < e)
         return -1;
@@ -201,9 +224,11 @@ float Polynomial::Coef(int e) {
     return -1;
 }
 
-//*****************************
-//
-//*****************************
+
+/*LeadExp*/
+//************************************************
+// return the leading exponent of the polynomial *
+//************************************************
 int Polynomial::LeadExp() {
     return termArray[0].getExp();
 }

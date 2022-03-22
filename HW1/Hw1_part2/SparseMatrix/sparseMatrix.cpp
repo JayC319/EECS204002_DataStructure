@@ -3,6 +3,8 @@
 #include <stdexcept>
 #include <limits>
 
+
+/* exceptionCheck1*/
 //************************************************************************
 // function to check if matrix addition is valid, else throw exceptions  *
 //************************************************************************
@@ -15,6 +17,8 @@ void exceptionCheck1 (const int r1, const int r2, const int c1, const int c2) {
             
 }
 
+
+/*exceptionCheck2*/
 //******************************************************************************
 // function to check if matrix multiplication is valid, else throw exceptions  *
 //******************************************************************************
@@ -28,6 +32,7 @@ void exceptionCheck2 (const int c, const int r) {
 }
 
 
+/* printSparseArray()*/
 //*******************************************************************
 // function to print the matrix in order of row -> column -> value *
 //*******************************************************************
@@ -40,6 +45,8 @@ void SparseMatrix::printSparseArray() {
     }
 }
 
+
+/* swapMatrixTerm */
 //*************************************************
 // function to swap the matrix term individually *
 //*************************************************
@@ -56,6 +63,8 @@ void swapMatrixTerm(MatrixTerm& a, MatrixTerm& b){
     b.setValue(tempVal);
 }
 
+
+/* sortSparseMatrix */
 //**************************************************************
 // sort the sparseMatrix by similar approach of selection sort *
 //**************************************************************
@@ -79,6 +88,8 @@ void sortSparseMatrix(MatrixTerm* mt, int terms){
     }
 }
 
+
+/* resize */
 //*************************************************
 // resize the sparse matrix if the capcity is full*
 //*************************************************
@@ -98,6 +109,7 @@ void SparseMatrix::resize(const int newSize){
     smArray = temp;
     capacity = newSize;
 }
+
 
 //*************************************************
 // overloads the >> operator to input matrix term *
@@ -180,6 +192,8 @@ ostream& operator<<(ostream& os, SparseMatrix& sm) {
     return os;
 }
 
+
+/*addTerm*/
 //****************************
 // method to assign new term *
 //****************************
@@ -194,6 +208,8 @@ void SparseMatrix::addTerm(const int row, const int col, const int val) {
     }
 }
 
+
+/*Transpose*/
 //*****************************************************
 // method to transpose an matrix using fast transpose *
 //*****************************************************
@@ -227,6 +243,8 @@ SparseMatrix SparseMatrix::Transpose()
     return b; 
 }
 
+
+/*Add*/
 //*******************************************************************
 // functions to add two matrix and a new SparseMatrix return object *
 //*******************************************************************
@@ -316,10 +334,11 @@ SparseMatrix SparseMatrix::Add(SparseMatrix b)
     return temp;
 }
 
+
+/*Multiply*/
 //****************************
 // method to multiply matrix *
 //****************************
-
 SparseMatrix SparseMatrix::Multiply(SparseMatrix b) {
     try {
         // if(cols != b.rows)

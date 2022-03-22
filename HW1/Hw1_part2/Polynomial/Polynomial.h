@@ -61,17 +61,4 @@ public:
     int LeadExp(); // return the largest exponent is *this
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif
