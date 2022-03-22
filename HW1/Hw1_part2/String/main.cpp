@@ -9,10 +9,12 @@ int main()
     String s((char*)"Jordan", 6),
            p((char*)"Lebron", 6),
            t((char*)"Kobe", 4),
-           longQuote((char*)"Jordan > Lebron, it ain't close.", 32),
+           longQuote((char*)"Michael Jordan > Lebron James, it ain't close.", 45),
            empty((char*)"", 0);
         
     
+
+    cout << endl  << endl;
     // testbench
     //////////////////////////////////////////////////
     // test for operator ==
@@ -59,8 +61,8 @@ int main()
     cout << "[Test for the Substr() function]" << endl;
     cout << "-----------------------------------------------------" << endl;
     cout << "String : "<< s.showString() << endl;
-    cout << "we are looking for s.Substr(3, 7) which returns string[3]~string[6]" << endl;
-    String newString = s.Substr(3,7);
+    cout << "we are looking for s.Substr(3, 3) which returns string[3]~string[5]" << endl;
+    String newString = s.Substr(3,3);
     cout << "newstring: " << newString.showString() << endl;
     cout << "-----------------------------------------------------" << endl;
     cout << endl;

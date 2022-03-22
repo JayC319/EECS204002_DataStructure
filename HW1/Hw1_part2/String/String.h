@@ -38,10 +38,9 @@ public:
     int Compare(String y);
     //10
     void FailureFunction();
-    //
+    //11
     string showString() { return str; }
     
-
 
 
 };

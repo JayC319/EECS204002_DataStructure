@@ -1,8 +1,8 @@
 #include "String.h"
 
-//*********************************
-//
-//*********************************
+//********************************************
+// find failure array for each String object *
+//********************************************
 void String::FailureFunction() {
     int lengthP = len;
 
@@ -52,12 +52,24 @@ String String::Concat(String t) {
     return temp;
 }
 
-//*********************************
-//   generate substring i ~ j-1   *
-//*********************************
-String String::Substr(int start, int end) {
+//*****************************************
+//   generate substring i ~ j-1           *
+// updated :  generate a substring i~i+j-1*
+//*****************************************
+String String::Substr(int subPos, int subLen) {
+    // try {
+    //     if(start >= len || end > len ) 
+    //         throw "invalid operation";
+    // }
+
+    // catch (const char* error) {
+    //     cout << error << endl;
+    //     String temp((char*)"", 0);
+    //     return temp;
+    // }
+
     try {
-        if(start >= len || end > len ) 
+        if(subPos + subLen > len) 
             throw "invalid operation";
     }
 
@@ -69,23 +81,26 @@ String String::Substr(int start, int end) {
 
     String temp((char*)"", 0);
     
-    int count = start;
-    while (count < end) {
-        temp.str += str[count];
+    
+
+    int count = 0;
+    while (count < subLen) {
+        temp.str += str[count + subPos];
         count++;
     }
 
-    temp.len = (end - start);
+    temp.len = len;
     delete temp.f;
     temp.f = new int[temp.len];
     return temp;
 }
 
 
-//6
-//*********************************
-//
-//*********************************
+
+//*************************************
+//     find the pattern in the string *
+// if exists return starting position *
+//*************************************
 int String::Find(String pat) {
     FailureFunction();
     pat.FailureFunction();
@@ -117,13 +132,14 @@ int String::Find(String pat) {
 }
 
 
-//7
-//*********************************
-//
-//*********************************
+
+//*********************************************************
+//    delete String[start] to String[start + length - 1]  *
+//    if invalid operation happens, return empty string   *
+//*********************************************************
 String String::Delete(int start, int length) {
     try {
-        if (start+length >= len) 
+        if (start+length > len) 
             throw "invalid operation!";
     }
 
@@ -146,10 +162,10 @@ String String::Delete(int start, int length) {
 }
 
 
-//8
-//*********************************
-//
-//*********************************
+
+//*********************************************
+//  delete all given character in the string  *
+//*********************************************
 String String::CharDelete(char c) {
     int i = 0,
         count = 0;
@@ -171,10 +187,9 @@ String String::CharDelete(char c) {
 }
 
 
-//9
-//*********************************
-//
-//*********************************
+//******************************************
+//    compare 2 string with specific rule  *
+//******************************************
 int String::Compare(String y) {
     
     bool different = false;
