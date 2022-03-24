@@ -9,7 +9,6 @@ void midcopy(T* newArray, T* oldArray, int front, int size, int capacity) {
 }
 
 
-
 template<class T>
 class Deque:public Queue<T> {
 private:

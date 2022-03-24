@@ -39,8 +39,13 @@ template<class T>
 void Queue<T>::Pop() {
     if (this->IsEmpty())
         throw "[Error]: Queue is empty. Cannot delete.";
-    this->array[front++].~T();
+    
+    front = (front + 1) % this->capacity;
+    this->array[front].~T();
     this->size--;
+    
+        
+
 }
 
 template<class T>
