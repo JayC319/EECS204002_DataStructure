@@ -109,7 +109,7 @@ void Queue<T>::ShowProperty() {
     Show();
     cout << "queue size: " << Size() << endl;
     cout << "queue capacity: " << Capacity() << endl;
-    if(size) {
+    if( size) {
         cout << "front element: " << Front() << endl;
         cout << "rear element: " << Rear() << endl;
     }
