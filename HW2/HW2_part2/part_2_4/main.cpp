@@ -201,7 +201,7 @@ void ShowMazeAfterTraverse(int w, int l) {
                     cout << "  ";
                     break;
                 case 1:
-                    cout << "\/\/";
+                    cout << "//";
                     break;
                 case 2:
                     cout << ". ";
@@ -231,9 +231,11 @@ void path(int w, int l) {
     temp.dir = E;
     mark[1][1] = 1;
     route.push(temp);
+    cout << "pushed in: " << temp << endl;
 
     while(!route.empty()) {
         temp = route.top();
+        cout << "popped out: " << temp << endl;
         route.pop();
         x = temp.x;
         y = temp.y;
@@ -261,6 +263,7 @@ void path(int w, int l) {
                 temp.y = y;
                 temp.dir = dir;
                 route.push(temp);
+                cout  << "pushed in: " << temp << endl;
                 x = new_x;
                 y = new_y;
                 dir = E;

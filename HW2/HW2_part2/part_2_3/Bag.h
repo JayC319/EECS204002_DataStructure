@@ -105,8 +105,8 @@ template<class T>
 void Bag<T>::ShowProperties() {
     cout << "\nShowing properties: " << endl;
     cout << "-------------------------------------" << endl;
-    cout << "Size: " << size << endl;
-    cout << "Capacity: " << capacity << endl;
+    cout << "Size: " << Size() << endl;
+    cout << "Capacity: " << Capacity() << endl;
     cout << "items: " << endl;
     Print();
     cout << "-------------------------------------" << endl;
