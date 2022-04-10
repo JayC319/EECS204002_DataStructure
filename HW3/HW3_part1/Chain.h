@@ -306,14 +306,14 @@ Chain<T>* Chain<T>::merge(Chain<T>* L2) {
         N1 = N1->link;
     }
    
-    if(!N1)
+    if(N1)
         cur->link = N1;   // append the rest of the list to the merged list
-    if(!N2)
+    if(N2)
         cur->link = N2;   // append the rest of the list to the merged list
     
     this->first = NULL;  
     L2->first = NULL;
-    return L3;
+    return L3;+
 }
 
 #endif
