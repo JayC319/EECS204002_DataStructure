@@ -22,7 +22,7 @@ public:
     int getRear(){return this->rear;}
 };
 
-
+/* assigning the front and rear from middle*/
 template <class T>
 Deque<T>::Deque(int stackCapacity):Queue<T>(stackCapacity) {
     this->front = stackCapacity / 2;
@@ -32,6 +32,12 @@ Deque<T>::Deque(int stackCapacity):Queue<T>(stackCapacity) {
 template<class T>
 Deque<T>::~Deque() {}
 
+/*PopFromBack*/
+/******************************************************************
+ * @brief Pop the element from the rear of the queue if not empty *
+ *                                                                *
+ * @tparam T                                                      *
+ ******************************************************************/
 template<class T>
 void Deque<T>::PopFromBack() {
     if(this->IsEmpty())
@@ -45,6 +51,13 @@ void Deque<T>::PopFromBack() {
         this->rear--;
 }
 
+/*PushFromFront*/
+/*********************************************************************
+ * @brief This functions pushes element from the front of the queue  *
+ *                                                                   *
+ * @tparam T                                                         *
+ * @param x                                                          *
+ *********************************************************************/
 template<class T>
 void Deque<T>::PushFromFront(const T& x) {
     if((this->Size()+1) == this->Capacity()) {

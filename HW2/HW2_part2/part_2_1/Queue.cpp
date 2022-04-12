@@ -46,9 +46,9 @@ void Queue<T>::Push(const T& x) {
 
 
 /*Pop class method*/
-/************
- * 
- * **********/
+/********************************************************
+ * pop out the front element if the queue is not empty  *
+ * ******************************************************/
 template <class T>
 void Queue<T>::Pop() {
     if(IsEmpty())
@@ -59,27 +59,27 @@ void Queue<T>::Pop() {
 }
 
 /*Capacity class method*/
-/************
- * 
- * **********/
+/***************************************
+ *  returns the capacity of the queue  *
+ * *************************************/
 template <class T>
 int Queue<T>::Capacity() const {
     return capacity;
 }
 
 /*Size() class method*/
-/************
- * 
- * **********/
+/***********************************
+ *   returns the size of the queue *
+ * *********************************/
 template <class T>
 int Queue<T>::Size() const {
     return ((rear + capacity - front) % capacity);
 }
 
 /*Front() class method*/
-/************
- * 
- * **********/
+/********************************************
+ *  returns the front element of the queue  *
+ * ******************************************/
 template<class T>
 inline T& Queue<T>::Front() const {
     if (IsEmpty())
@@ -88,9 +88,9 @@ inline T& Queue<T>::Front() const {
 }
 
 /*Rear() class method*/
-/************
- * 
- * **********/
+/*******************************************
+ *  returns the rear element of the queue  *
+ * *****************************************/
 template<class T>
 inline T& Queue<T>::Rear() const {
     if (IsEmpty())
@@ -99,9 +99,13 @@ inline T& Queue<T>::Rear() const {
 }
 
 /*ShowProperty() class method*/
-/************
- * 
- * **********/
+/************************************************
+ *   shows the property of the queue by using:  *
+ *  1. Size() class method                      *
+ *  2. Capacity() class method                  *
+ *  3. Front() class method                     *
+ *  4. Rear() class method                      *
+ * **********************************************/
 template<class T>
 void Queue<T>::ShowProperty() {
     cout << "show property: " << endl;
@@ -119,9 +123,9 @@ void Queue<T>::ShowProperty() {
 }
 
 /*Show() class method*/
-/************
- * 
- * **********/
+/**********************************************
+ *  this shows the queue element sequentialy  *
+ * ********************************************/
 template<class T>
 void Queue<T>::Show() {
     cout << "queue: " << endl;
@@ -135,9 +139,13 @@ void Queue<T>::Show() {
 }
 
 /*Merge() class method*/
-/************
- * 
- * **********/
+/********************************************************************
+ *  this mereges two queue into one queue by queuing up elements    *
+ *  by taking turns of choosing elements from each queues.          *
+ *  and the queue that was taken as argument will be empty          *
+ *  and the element from it will be merged to the queue that        *
+ *  invoke the class method                                         *
+ * *****************************************************************/
 template<class T>
 void Queue<T>::Merge(Queue<T>& b) {
     T* newQu = new T[Capacity() + b.Capacity()];

@@ -11,6 +11,9 @@ void copy(T* newArray, T* oldArray, int front, int size, int capacity) {
 }
 
 
+
+/*queue class derived from bag*/
+/*this uses a circular queue approach*/
 template<class T>
 class Queue:public Bag<T> {
 public:
@@ -35,6 +38,13 @@ Queue<T>::Queue(int stackCapacity):Bag<T>(stackCapacity) {
 template<class T>
 Queue<T>::~Queue() {}
 
+/*Pop*/
+/*********************************************************
+ * @brief                                                *
+ * This pops the front element of the queue if not empty *
+ *                                                       *
+ * @tparam T                                             *
+ *********************************************************/
 template<class T>
 void Queue<T>::Pop() {
     if (this->IsEmpty())
@@ -43,11 +53,17 @@ void Queue<T>::Pop() {
     front = (front + 1) % this->capacity;
     this->array[front].~T();
     this->size--;
-    
-        
-
 }
 
+/*Push*/
+/*******************************************************
+ * @brief                                              *
+ * This pushes element into the queue                  *
+ * Is the queue is becoming full resizes the queue     *
+ *                                                     *
+ * @tparam T                                           *
+ * @param x  takes the element                                          *
+ *******************************************************/
 template<class T>
 void Queue<T>::Push(const T& x) {
     if ((rear + 1) % this->capacity == front) {
@@ -64,7 +80,13 @@ void Queue<T>::Push(const T& x) {
     this->size++;
 }
 
-
+/*Print*/
+/****************************************************
+ * @brief                                           *
+ *  This prints out the bag element sequentially    *
+ *                                                  *
+ * @tparam T                                        *
+ ****************************************************/
 template<class T>
 void Queue<T>::Print() const {
     cout << "queue: " << endl;
@@ -78,7 +100,16 @@ void Queue<T>::Print() const {
 }
 
 
-
+/*ShowProperties*/
+/*********************************************
+ * @brief This shows property of the bag     *
+ * By using Size() to show size              *
+ * Capacity() to show capacity               *
+ * Print() to show all elements sequentially *
+ * Front() to show the front element         *
+ * Rear() to show the rear element           *                                          *
+ * @tparam T                                 *
+ *********************************************/
 template<class T>
 void Queue<T>::ShowProperties() {
     cout << "show property: " << endl;
