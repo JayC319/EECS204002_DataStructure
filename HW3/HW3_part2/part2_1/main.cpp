@@ -14,6 +14,8 @@ int main() {
         C1.InsertFront(i);
     C1.display();
 
+
+
     cout << "\n[test for InsertBack]:" << endl;
     for(int i = 90; i < 105; i++)
         C1.InsertBack(i); 

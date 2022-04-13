@@ -24,9 +24,9 @@ public:
     void deCircular();
     
     void display();
-    
-
-
+    void ReplaceNode(int, T&);
+    void InsertionBeforeK(int, T&);
+    void divideMid(CircularList<T>*);
     int Size();
     void InsertFront(const T&);
     void InsertBack(const T&);
@@ -305,4 +305,61 @@ CircularList<T>* CircularList<T>::merge(CircularList<T>* CL2) {
 
 
 }
+
+
+/**/
+template <class T>
+void CircularList<T>::InsertionBeforeK(int k, T& newData) {
+    ListNode<T>* cur = head->link;
+    ListNode<T>* newNode = new ListNode<T>;
+    newNode->data = newData;
+    newNode->link = NULL;
+
+    for(int i = 1; i < k - 1; i++) {
+        if(cur == head)
+            cerr << "Given index is unattainable";
+        else 
+            cur = cur->link; 
+    }
+
+    newNode->link = cur->link;              
+    cur->link = newNode;
+}
+
+/**/
+template <class T>
+void CircularList<T>::ReplaceNode(int k, T& newData) {
+    ListNode<T>* cur = head->link;
+    for(int i = 1; i < k; i++) {
+        if(cur == head)
+            cerr << "Given index is unttainable" << endl;
+        else 
+            cur = cur->link;
+    }
+    cur->data = newData;
+}
+
+/**/
+template <class T>
+void CircularList<T>::divideMid(CircularList<T>* subList) {
+    int count = this->Size();
+    int mid = (count / 2 + count % 2);
+    ListNode<T>* cur = head->link;
+
+    if(count == 0 || count == 1)
+        return;
+    for(int i = 1; i < mid; i++) {
+        cur = cur->link;
+    }
+
+    subList->head->link = cur->link;
+    cur->link = this->head;
+
+    ListNode<T>* subCur = subList->head;
+    while(subCur->link != head) {
+        subCur = subCur->link;
+    }
+    subCur->link = subList->head;
+}
+
 #endif
