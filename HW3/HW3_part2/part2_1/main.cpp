@@ -92,7 +92,6 @@ int main() {
     mergelist = C2->merge(&sublist);
     cout << "mergelist: ";
     mergelist->display();
-
     
 
     cout << "\n\n*****end*****" << endl;
