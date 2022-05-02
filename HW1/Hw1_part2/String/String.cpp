@@ -1,5 +1,15 @@
 #include "String.h"
 
+void String::showFailureFunction()
+{
+    for (int i = 0; i < len; i++)
+    {
+        cout << f[i];
+    }
+    cout << endl;
+}
+
+
 
 /*FailureFunction()*/
 //********************************************

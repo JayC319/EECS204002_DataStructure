@@ -40,6 +40,8 @@ public:
     void FailureFunction();
     //11
     string showString() { return str; }
+
+    void showFailureFunction();
     
 
 

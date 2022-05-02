@@ -56,7 +56,7 @@ int main() {
     cout << "multPoly: " << multPoly << endl;
     cout << "P1: " << P1 << endl;
     cout << "P2: " << P2 << endl;
-    cout << "multPoly = P1 + P2 " << endl;
+    cout << "multPoly = P1 * P2 " << endl;
     multPoly = P1 * P2;
     cout << "multPoly: " << multPoly << endl;
 

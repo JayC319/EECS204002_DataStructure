@@ -26,6 +26,10 @@ int main() {
         C1.deleteBack(); 
     C1.display();
 
+    cout << "\n[test for DeleteFront]" << endl;
+    C1.deleteFront();
+    C1.display();
+
     cout << "\n[test for Front and Back]:" << endl;
     cout << "Front of C1 is: " << C1.Front() 
     << endl << "Back of C1 is: " << C1.Back() << endl;

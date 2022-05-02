@@ -6,13 +6,13 @@ using namespace std;
 int main() 
 {
     
-    String s((char*)"Fakereaka", 9),
+    String s((char*)"abaabaabbabbba", 14),
            p((char*)"Fakez", 5),
            t((char*)"Kobe", 4),
            longQuote((char*)"Michael Jordan > Lebron James, it ain't close.", 45),
            empty((char*)"", 0);
         
-    
+    s.showFailureFunction();
 
     cout << endl  << endl;
     // testbench

@@ -65,8 +65,10 @@ int main() {
     cout << "L1: " << L1 << endl;
     cout << L1.specialMult() << endl; 
 
-
-
+    cout << "\n[test for Reverse() of the list class" << endl;
+    cout << "L1 before reverse: " << L1 << endl;
+    L1.Reverse();
+    cout << "L1 after reverse: " << L1 << endl;
    
     cout << "\n*****end of testbench*****" << endl;
 }

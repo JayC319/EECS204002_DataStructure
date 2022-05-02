@@ -34,6 +34,7 @@ public:
     List() {first = NULL;}
     ~List();
     void Display();
+    void Reverse();
     int Size();
     void InsertFront(T);
     void InsertBack(T);
@@ -296,6 +297,23 @@ ostream& operator<<(ostream& os, List<T>& list)
 {
     list.Display();
     return os;
+}
+
+template<class T>
+void List<T>::Reverse() {
+    Node<T> *curr = first;
+    Node<T> *prev = NULL;
+    Node<T> *r = NULL ;
+
+    while(curr) {
+        r = prev;
+        prev = curr;
+        curr = curr->link;
+        prev->link = r;
+    }
+
+    first = prev;
+
 }
 
 
